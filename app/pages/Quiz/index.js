@@ -23,7 +23,8 @@ const Quiz = () => {
   }, [index, quizes]);
 
   const submitAnswer = useCallback(() => {
-    if (inputValue === quizes[index].answer) {
+    let value=inputValue.toLowerCase().trim()
+    if (value === quizes[index].answer) {
       setWrong(false);
       setIndex(Math.floor(Math.random() * questions?.length));
     } else {
